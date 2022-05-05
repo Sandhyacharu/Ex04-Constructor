@@ -41,12 +41,15 @@ namespace Hello
                 Employee emp1 = new Employee("Hari", "Tester", 10, 30000, 1000);
                 emp1.salary();
                 emp1.display();
+                Employee emp2 = new Employee("Latha", "Developer", 5, 25000, 1000);
+                emp2.salary();
+                emp2.display();
             }
         }
 
     }
 ```
  ## Output:
- ![image](https://user-images.githubusercontent.com/75235167/166907329-b53bad31-b1b4-4f24-be0a-7ec501d4e894.png)
+![image](https://user-images.githubusercontent.com/75235167/166908148-5f217bbb-be6a-42e4-9073-268dab9288fb.png)
 
  ## Result:
