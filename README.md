@@ -3,20 +3,35 @@
  To write a C# program to calculate the salary of an employee by passing the name, designation, noofexperience, basic salary and insurance amount through constructor.
  
  ## Algorithm:
- ### Step1:
+### Step1:
+Start.
+
+### Step2:
+Create a class and a constructor.
+
+### Step3:
+Get name, designation, noofexperience, basic salary and insurance amount from the User.
+
+### Step4:
+Call salary method in constructor to calculate salary.
+
+### Step5:
+Call display method to display the output.
+
+### Step6:
+stop.
  
- 
- 
- ## Program:
+## Program:
  ```c#
- using System;
+using System;
 namespace Hello
 {
     class Employee
     {
         public string name, designation;
-        public int experience, insurance, basicsalary;
-        public float hra, ta, income;
+        int experience, insurance, basicsalary;
+        float hra, ta, income;
+
         public Employee(string name, string designation, int experience, int basicsalary, int insurance)
         {
             this.name = name;
@@ -24,32 +39,51 @@ namespace Hello
             this.experience = experience;
             this.basicsalary = basicsalary;
             this.insurance = insurance;
+            salary();
+            display();
         }
-            public void salary()
-            {
-                hra = (20 / 100) * this.basicsalary;
-                ta = (10 / 100) * this.basicsalary;
-                income = hra + ta + this.basicsalary - this.insurance;
-            }
-            void display()
-            {
-                Console.WriteLine("Name of the employee is {0} having {1} of experience, working as {2}", this.name, this.experience, this.designation);
-                Console.WriteLine("Receives {0} of salary", income);
-            }
+        public void salary()
+        {
+            hra = (20 * basicsalary) / 100;
+            ta = (10 * basicsalary) / 100;
+            income = hra + basicsalary + ta - insurance;
+        }
+        public void display()
+        {
+            Console.WriteLine("Name of the employee is {0} having {1} of experience, working as {2}", this.name, this.experience, this.designation);
+            Console.WriteLine("Receives {0} of salary", income);
+        }
+        public class program
+        {
             static void Main(String[] args)
             {
-                Employee emp1 = new Employee("Hari", "Tester", 10, 30000, 1000);
-                emp1.salary();
-                emp1.display();
-                Employee emp2 = new Employee("Latha", "Developer", 5, 25000, 1000);
-                emp2.salary();
-                emp2.display();
+                string name, designation;
+                int experience, basicsalary, insurance, n;
+                Console.WriteLine("No of employees: ");
+                n = Convert.ToInt32(Console.ReadLine());
+                for (int i = 1; i <= n; i++)
+                {
+                    Console.WriteLine("Name of the employee: ");
+                    name = Console.ReadLine();
+                    Console.WriteLine("Designation of the employee: ");
+                    designation = Console.ReadLine();
+                    Console.WriteLine("Years of experience: ");
+                    experience = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Basic salary of the employee: ");
+                    basicsalary = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("insurance: ");
+                    insurance = Convert.ToInt32(Console.ReadLine());
+                    Employee emp = new Employee(name, designation, experience, basicsalary, insurance);
+                }
+
+
             }
         }
-
     }
+}
 ```
- ## Output:
-![image](https://user-images.githubusercontent.com/75235167/166908148-5f217bbb-be6a-42e4-9073-268dab9288fb.png)
+## Output:
+![image](https://user-images.githubusercontent.com/75235167/166965168-39c98cb0-eac8-4b6c-ace1-79d9666f8b16.png)
 
- ## Result:
+## Result:
+Thus the C# program to calculate the salary of an employee by passing the name, designation, noofexperience, basic salary and insurance amount through constructor is executed successfully.
